@@ -1,4 +1,10 @@
 import express from "express";
+import conectarAoBanco from "./src/config/dbConfig.js";
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+await conectarAoBanco(process.env.STRING_CONEXAO); 
 
 const posts = [
     {
@@ -12,7 +18,7 @@ const posts = [
         id:2,
         descricao: "Paisagem deslumbrante ao pôr do sol",
         imagem: "https://picsum.photos/seed/1/300/200",
-        local: "Praia de Copacabana",
+        local: "Praia de Copacabana 2",
         data: "2023-11-20"
     },
     {
