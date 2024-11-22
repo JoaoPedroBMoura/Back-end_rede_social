@@ -1,4 +1,5 @@
 import express from "express";
+import { listaPosts } from "../controller/postsController.js";
 
 //local aonde ficaram armazenadas todas as rotas da aplicação
 const routes = (app)=>{
@@ -6,11 +7,19 @@ const routes = (app)=>{
     app.use(express.json());
     
     //rota para buscar todos os posts 
-    app.get("/posts",async (req,res)=>{
-        //chama função para buscar todos os posts
-        const posts = await getTodosPosts();
-        res.status(200).json(posts);
-    });
+    app.get("/posts",listaPosts);
+
+    app.get("/livros",(req,res)=>{
+    
+        const livro1={
+            titulo: "Evangelho falsificado",
+            autor: "Roger E. Olson",
+            opiniao:"Excelente Livro"
+        }
+        
+        res.status(200).send(livro1);
+    })
+
 }
 
 export default  routes;
