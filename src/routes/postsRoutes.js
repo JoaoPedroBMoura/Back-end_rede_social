@@ -9,8 +9,8 @@ const routes = (app)=>{
     //rota para buscar todos os posts 
     app.get("/posts",listaPosts);
     //rota para criar um novo post
-    app.post("/post",postarNovoPost);
-    
+    app.post("/posts",postarNovoPost);
+
     app.get("/livros",(req,res)=>{
     
         const livro1={
