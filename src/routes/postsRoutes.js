@@ -1,5 +1,5 @@
 import express from "express";
-import { listaPosts } from "../controller/postsController.js";
+import { listaPosts, postarNovoPost} from "../controller/postsController.js";
 
 //local aonde ficaram armazenadas todas as rotas da aplicação
 const routes = (app)=>{
@@ -8,7 +8,9 @@ const routes = (app)=>{
     
     //rota para buscar todos os posts 
     app.get("/posts",listaPosts);
-
+    //rota para criar um novo post
+    app.post("/post",postarNovoPost);
+    
     app.get("/livros",(req,res)=>{
     
         const livro1={
