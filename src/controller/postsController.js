@@ -1,4 +1,4 @@
-import getTodosPosts from "../model/postsModel.js";
+import {getTodosPosts,criarPost} from "../model/postsModel.js";
 
 export async function listaPosts(req,res){
     //chama função para buscar todos os posts

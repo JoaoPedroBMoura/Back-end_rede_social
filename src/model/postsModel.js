@@ -1,4 +1,4 @@
-import {conectarAoBanco,criarPost} from "../config/dbConfig.js";
+import conectarAoBanco from "../config/dbConfig.js";
 const conexao = await conectarAoBanco(process.env.STRING_CONEXAO); 
 
 export  async function getTodosPosts(){
